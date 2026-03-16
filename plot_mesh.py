@@ -87,7 +87,7 @@ cbar.ax.tick_params(labelsize=9)
 # Labels
 ax.set_xlabel("Longitude (°)", fontsize=11)
 ax.set_ylabel("Latitude (°)", fontsize=11)
-ax.set_title("West UK Ambient Mesh\n(colour = edge length)", fontsize=13)
+ax.set_title("West UK Ambient Mesh", fontsize=13)
 ax.tick_params(labelsize=9)
 
 # Legend for boundary overlays
