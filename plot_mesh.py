@@ -23,7 +23,7 @@ from matplotlib.collections import LineCollection
 # Paths
 # ---------------------------------------------------------------------------
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-MESH_SHP   = os.path.join(SCRIPT_DIR, "shapefiles", "west_uk_mesh.shp")
+MESH_SHP   = os.path.join(SCRIPT_DIR, "outputs", "west_uk_mesh.shp")
 OUT_FILE   = os.path.join(SCRIPT_DIR, "mesh_plot.png")
 
 # ---------------------------------------------------------------------------

@@ -2,6 +2,8 @@
 
 Unstructured mesh generation for the West UK / Severn Estuary region, intended for tidal hydrodynamic simulations. Built with [qmesh](https://qmesh.org) and [gmsh](https://gmsh.info).
 
+![West UK Mesh](mesh_plot.png)
+
 ## Overview
 
 The mesh covers the Irish Sea and Severn Estuary (lon: −14° to −2°, lat: 47° to 60°, EPSG:32630). Resolution is spatially graded — coarse offshore and progressively finer near coastlines, estuaries, islands, and instrument locations. The same framework supports extended configurations including tidal range structures (lagoons).

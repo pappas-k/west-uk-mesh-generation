@@ -15,5 +15,3 @@ shapefiles/west_uk_mesh.*
 # Intermediate raster
 shapefiles/meshMetric-whole.nc
 
-# Plots
-mesh_plot.png
