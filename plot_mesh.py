@@ -1,13 +1,14 @@
 """
 Plot the West UK unstructured mesh.
 
-Reads west_uk_mesh.shp from the shapefiles/ directory and produces a figure
+Reads west_uk_mesh.shp from the outputs/ directory and produces a figure
 where each mesh edge is coloured by its length (m), revealing the resolution
-gradation across the domain.
+gradation across the domain. Overlays the shoreline (black) and open sea
+boundaries (blue) from the domain shapefile.
 
 Outputs
 -------
-mesh_plot.png  — saved in the current working directory
+mesh_plot.png  — saved in the project root
 """
 
 import os
@@ -24,6 +25,7 @@ from matplotlib.collections import LineCollection
 # ---------------------------------------------------------------------------
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 MESH_SHP   = os.path.join(SCRIPT_DIR, "outputs", "west_uk_mesh.shp")
+DOMAIN_SHP = os.path.join(SCRIPT_DIR, "shapefiles", "whole_domain_ambient.shp")
 OUT_FILE   = os.path.join(SCRIPT_DIR, "mesh_plot.png")
 
 # ---------------------------------------------------------------------------
@@ -48,6 +50,13 @@ for geom, length in zip(gdf.geometry, gdf["length_m"]):
 lengths = np.array(lengths)
 
 # ---------------------------------------------------------------------------
+# Load domain boundaries (shoreline + open sea)
+# ---------------------------------------------------------------------------
+domain = gpd.read_file(DOMAIN_SHP)  # already EPSG:4326
+shoreline      = domain[domain["PhysID"].isna()]
+open_boundaries = domain[domain["PhysID"].isin([4, 5, 6])]
+
+# ---------------------------------------------------------------------------
 # Plot
 # ---------------------------------------------------------------------------
 print(f"Plotting {len(segments):,} mesh edges …")
@@ -66,6 +75,10 @@ xmin, ymin, xmax, ymax = gdf.total_bounds
 ax.set_xlim(xmin, xmax)
 ax.set_ylim(ymin, ymax)
 
+# Shoreline and open boundaries
+shoreline.plot(ax=ax, color="black", linewidth=0.8, zorder=2)
+open_boundaries.plot(ax=ax, color="blue", linewidth=1.2, zorder=3)
+
 # Colorbar
 cbar = fig.colorbar(lc, ax=ax, fraction=0.03, pad=0.02)
 cbar.set_label("Edge length (m)", fontsize=11)
@@ -76,6 +89,14 @@ ax.set_xlabel("Longitude (°)", fontsize=11)
 ax.set_ylabel("Latitude (°)", fontsize=11)
 ax.set_title("West UK Ambient Mesh\n(colour = edge length)", fontsize=13)
 ax.tick_params(labelsize=9)
+
+# Legend for boundary overlays
+from matplotlib.lines import Line2D
+legend_elements = [
+    Line2D([0], [0], color="black", linewidth=0.8, label="Shoreline"),
+    Line2D([0], [0], color="blue",  linewidth=1.2, label="Open boundary"),
+]
+ax.legend(handles=legend_elements, loc="upper right", fontsize=8)
 
 # Stats annotation
 textstr = (
