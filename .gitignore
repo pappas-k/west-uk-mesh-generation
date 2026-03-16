@@ -5,6 +5,9 @@ __pycache__/
 # IDE
 .idea/
 
+# Word documents
+*.docx
+
 # Dropbox artifacts
 .fuse_hidden*
 
