@@ -12,6 +12,7 @@ The mesh covers the Irish Sea and Severn Estuary (lon: −14° to −2°, lat: 4
 
 ```
 mesh_generation.py       # Main mesh generation script
+plot_mesh.py             # Visualise the mesh, coloured by edge length
 how_to_lagoon_mesh.docx  # Guide for adding a tidal lagoon to the domain
 shapefiles/
   whole_domain_ambient.shp   # Domain outline with open boundary PhysIDs
@@ -69,6 +70,16 @@ This produces:
 - `west_uk_mesh.msh` — the mesh
 - `west_uk_mesh.shp` — shapefile for visualisation in QGIS
 - `meshMetric-whole.nc` — combined resolution raster (NetCDF4)
+
+## Visualisation
+
+After generating the mesh, run:
+
+```bash
+python plot_mesh.py
+```
+
+Reads `outputs/west_uk_mesh.shp` and saves `mesh_plot.png` to the project root. Each edge is coloured by its length (log scale), showing the resolution gradation across the domain. Requires `geopandas` and `matplotlib`.
 
 ## Lagoon Configuration
 
