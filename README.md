@@ -62,7 +62,7 @@ qmeshcontainer -mwd
 
 **3. Inside the container, run the script:**
 ```bash
-cd mesh
+cd project directory
 python mesh_generation.py
 ```
 
