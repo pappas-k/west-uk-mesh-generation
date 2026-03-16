@@ -2,7 +2,7 @@
 
 Unstructured mesh generation for the West UK / Severn Estuary region, intended for tidal hydrodynamic simulations. Built with [qmesh](https://qmesh.org) and [gmsh](https://gmsh.info).
 
-<img src="mesh_plot.png" width="500"/>
+<img src="mesh_plot.png" width="500" height="480"/>
 
 *Mesh edges coloured by length (log scale). Black = shoreline, blue = open sea boundaries.*
 
