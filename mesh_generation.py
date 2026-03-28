@@ -134,7 +134,7 @@ if __name__ == '__main__':
                              'gradation/grad_large.shp',
                              'gradation/grad_extra.shp']
 
-    h_l =15000
+    h_l = 15000  # maximum mesh element size in metres
     #f=2
     # Specifying the mesh resolution parameters we seek for each of the above shapefiles
      
