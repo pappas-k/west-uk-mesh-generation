@@ -9,6 +9,10 @@ as described below
 
 """
 
+import qmesh
+import os
+
+
 def generate_mesh(name,
                   outline,
                   resolution_shapefiles,
@@ -108,9 +112,7 @@ if __name__ == '__main__':
     In this example we have put together the files for the Severn Estuary, and we call on these to the function
     """
 
-    import qmesh
-    import os
-    print (os.getcwd())
+    print(os.getcwd())
     # Change working directory to folder that contains
     os.chdir("shapefiles/")
     
