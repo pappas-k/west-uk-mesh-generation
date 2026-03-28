@@ -1,6 +1,6 @@
 # West UK Ambient Mesh
 
-Unstructured mesh generation for the West UK / Severn Estuary region, intended for tidal hydrodynamic simulations. Built with [qmesh](https://qmesh.org) and [gmsh](https://gmsh.info).
+Unstructured mesh generation for the West UK / Severn Estuary region, intended for tidal hydrodynamic simulations. Built with [qmesh](https://qmesh.org)  <!-- and [gmsh](https://gmsh.info)--> .
 
 <img src="mesh_plot.png" width="600" height="8000"/>
 
