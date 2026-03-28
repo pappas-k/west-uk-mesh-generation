@@ -135,21 +135,8 @@ if __name__ == '__main__':
                              'gradation/grad_extra.shp']
 
     h_l = 15000  # maximum mesh element size in metres
-    #f=2
-    # Specifying the mesh resolution parameters we seek for each of the above shapefiles
-     
-     #THIS WAS FOR THE FINER
-     #gradation_params = [(0.04  * h_l, h_l, 3.0, 0.005),  # for grad_irish_sea 
-     #                   (0.02  * h_l, h_l, 3.0, 0.001),   # for grad_estuaries
-     #                   (0.01  * h_l, h_l, 0.3, 0.002),   # for grad_gauges
-     #                   (0.01  * h_l, h_l, 0.3, 0.002),   # for grad_detectors_TRS
-     #                   (0.02  * h_l, h_l, 0.2, 0.0005),  # for grad_isl
-     #                   (0.01  * h_l, h_l, 0.3, 0.0005),  # for grad_isl_2
-     #                   (0.15  * h_l, h_l, 0.5),          # for grad_med
-     #                   (0.25  * h_l, h_l, 0.5),          # for grad_large
-     #                   (0.04  * h_l, h_l, 0.5, 0.001)]   # for grad_extra
-     
-         
+
+  # Specifying the mesh resolution parameters we seek for each of the above shapefiles   
     gradation_params = [(0.05  * h_l, h_l, 1.5,  2*0.002),   # for grad_irish_sea 
                         (0.025  * h_l, h_l, 1.5, 2*0.002),   # for grad_estuaries
                         (0.01  * h_l, h_l, 0.6, 0.002),       # for grad_gauges
