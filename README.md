@@ -91,6 +91,20 @@ To extend the domain with a tidal lagoon (tidal range structure), follow the wor
 2. Add a high-resolution gradation shapefile for the lagoon wall (`grad_internal_lagoon.shp`).
 3. Update `resolution_shapefiles` and `gradation_params` in the script accordingly.
 
+## Practical Application
+
+This mesh was used in the following peer-reviewed study:
+
+> Pappas, K., Nguyen, Q. C., Zilakos, I., Beevers, L., & Angeloudis, A. (2025). On the economic feasibility of tidal range power plants. *Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences*, 481(2305), 20230867. https://doi.org/10.1098/rspa.2023.0867
+
+In that paper, the ambient (baseline) West UK mesh served as the hydrodynamic domain for tidal simulations across the Irish Sea and Severn Estuary. It underpinned an integrated framework for assessing tidal range power plants, combining operation strategy optimisation, hydrodynamic impact modelling, and techno-economic analysis (CAPEX and LCOE). The spatially graded resolution — fine near coastlines, estuaries, and instrument locations — was essential for accurately resolving tidal dynamics at 18 candidate tidal range installation sites across the UK.
+
+## Citation
+
+If you use this mesh or the generation scripts, please cite:
+
+> Pappas, K., Nguyen, Q. C., Zilakos, I., Beevers, L., & Angeloudis, A. (2025). On the economic feasibility of tidal range power plants. *Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences*, 481(2305), 20230867. https://doi.org/10.1098/rspa.2023.0867
+
 ## Dependencies
 
 | Package          | Purpose                        |
